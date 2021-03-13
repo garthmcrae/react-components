@@ -4,9 +4,13 @@ import Button from './Button';
 import styles from './header-nav.scss';
 import useOnClickOutside from './useOnClickOutside';
 
-const HeaderNav = props => {
+interface Props {
+  children: React.ReactNode;
+  label: string;
+}
+
+const HeaderNav = ({ children, label }: Props) => {
   const ref = useRef(null);
-  const { children, label } = props;
   const [active, setActive] = useState(false);
   useOnClickOutside(ref, () => setActive(false));
   return (

@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import styles from './sidebar-main.scss';
 
-const SidebarMain = props => {
-  const { children } = props;
+interface Props {
+  children: React.ReactNode;
+}
+
+function SidebarMain({ children }: Props) {
   return <main className={styles.main}>{children}</main>;
-};
+}
 
 export default SidebarMain;

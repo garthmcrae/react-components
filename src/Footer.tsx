@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './footer.scss';
 
-const Footer = props => {
-  const { children } = props;
+interface Props {
+  children: React.ReactNode;
+}
+
+const Footer = ({ children }: Props) => {
   return (
     <footer className={styles.footer}>
       <span>{children}</span>

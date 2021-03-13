@@ -1,8 +1,15 @@
 import React from 'react';
+
 import styles from './checkable.scss';
 
-const Checkable = ({ children, id, inputRef, name, ...props }) => {
-  const { type } = props;
+interface Props {
+  children: React.ReactNode;
+  id: string;
+  inputRef: React.ReactNode;
+  name: string;
+}
+
+const Checkable = ({ children, id, inputRef, name, ...props }: Props) => {
   return (
     <div>
       <input className={styles.input} id={id} name={name} ref={inputRef} {...props} />

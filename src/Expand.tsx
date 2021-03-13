@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Expand = props => {
-  const { children, duration = 200, expand } = props;
+interface Props {
+  children: React.ReactNode;
+  duration: number;
+  expand: boolean;
+}
+
+const Expand = ({ children, duration = 200, expand }: Props) => {
   const [height, setHeight] = useState(0);
   const ref = useRef(null);
 

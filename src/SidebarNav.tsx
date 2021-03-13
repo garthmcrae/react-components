@@ -4,9 +4,13 @@ import Button from './Button';
 import styles from './sidebar-nav.scss';
 import useOnClickOutside from './useOnClickOutside';
 
-const SidebarNav = props => {
+interface Props {
+  children: React.ReactNode;
+  label: string;
+}
+
+function SidebarNav({ children, label }: Props) {
   const ref = useRef(null);
-  const { children, label } = props;
   const [active, setActive] = useState(false);
   useOnClickOutside(ref, () => setActive(false));
   return (
@@ -19,6 +23,6 @@ const SidebarNav = props => {
       <div>{children}</div>
     </nav>
   );
-};
+}
 
 export default SidebarNav;

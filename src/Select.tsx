@@ -2,15 +2,26 @@ import React, { Fragment, useRef } from 'react';
 import styles from './select.scss';
 import useOnClickOutside from './useOnClickOutside';
 
-const Select = props => {
+interface Props {
+  children: React.ReactNode;
+  disabled: boolean;
+  name: string;
+  options: {
+    label: string;
+    props: Object;
+    value: string;
+  }[];
+}
+
+function Select({ disabled, name = 'select', options = [] }: Props) {
   const ref = useRef(null);
   const [active, setActive] = React.useState(false);
   const [focus, setFocus] = React.useState(false);
-  const [value, setValue] = React.useState('');
-  const handleBlur = event => {
+  const [, setValue] = React.useState('');
+  const handleBlur = () => {
     setFocus(false);
   };
-  const handleClick = event => {
+  const handleClick = () => {
     setActive(!active);
   };
   const handleFocus = event => {
@@ -23,7 +34,6 @@ const Select = props => {
     }
   };
   useOnClickOutside(ref, () => setActive(false));
-  const { disabled, name = 'select', options = [] } = props;
   return (
     <div id={name} className={styles.select} ref={ref}>
       <div className={`${styles.options} ${active ? styles.active : styles.inactive} ${focus && styles.focus}`}>
@@ -42,9 +52,7 @@ const Select = props => {
                 value={option.value}
                 {...option.props}
               />
-              {/* <input
-                {...option.props}
-              /> */}
+
               <label htmlFor={`${name}-${index}`} onClick={handleClick}>
                 {option.label}
               </label>
@@ -54,6 +62,6 @@ const Select = props => {
       </div>
     </div>
   );
-};
+}
 
 export default Select;
