@@ -32,24 +32,12 @@
     "preversion": "npm run prettier && npm run stylelint",
     "start": "rollup -c -w",
     "stylelint": "stylelint --fix **/*.scss",
-    "version": "npm run build"
+    "version": "npm run build",
+    "prepare": "husky install"
   },
   "files": [
     "dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "src/**/*.{ts,tsx,scss}": [
-        "prettier --write",
-        "git add"
-      ]
-    }
-  },
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.4.0"
@@ -61,8 +49,7 @@
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "eslint-plugin-react": "^7.22.0",
-    "husky": "^5.1.3",
-    "lint-staged": "^10.5.4",
+    "husky": "^4.3.8",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.8",
     "react": "^17.0.1",
