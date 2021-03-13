@@ -23,8 +23,8 @@
   line-height: $line-height;
   outline: none;
   padding: $padding $padding $padding calc(#{$padding} * 2 + #{$line-height});
-  text-align: left;
   position: relative;
+  text-align: left;
   text-decoration: none;
   text-overflow: ellipsis;
   text-transform: none;
@@ -42,8 +42,8 @@
     display: block;
     height: $line-height;
     left: $padding;
-    top: $padding;
     position: absolute;
+    top: $padding;
     width: $line-height;
   }
 

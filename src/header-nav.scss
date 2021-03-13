@@ -9,9 +9,9 @@
   flex: 0 1 $sidebar-width;
   height: 100vh;
   position: fixed;
+  right: 0;
   top: 0;
   transition: right $duration;
-  right: 0;
   width: $sidebar-width;
   z-index: 2;
 

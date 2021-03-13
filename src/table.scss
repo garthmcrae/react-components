@@ -6,18 +6,19 @@
 }
 
 .table {
+  border-collapse: separate;
   border-color: $border-color;
   border-radius: $border-radius;
+  border-spacing: $border-width;
   border-style: $border-style;
   border-width: $border-width;
-  border-collapse: separate;
-  border-spacing: $border-width;
   font-size: $font-size;
   margin: 0;
   padding: 0;
   text-align: left;
   width: 100%;
 
+  /* stylelint-disable-next-line */
   > thead > tr > th {
     background: $color;
     border-color: $color;
@@ -30,6 +31,7 @@
     vertical-align: top;
   }
 
+  /* stylelint-disable-next-line */
   > tbody > tr > td {
     border-color: $border-color;
     border-radius: $border-radius;

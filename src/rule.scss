@@ -1,7 +1,7 @@
 @import 'variables';
 
 .rule {
-  border: none;
-  border-bottom: $border-color $border-width $border-style;
+  border: none 0;
+  border-bottom: $border-color $border-style $border-width;
   margin: 0;
 }

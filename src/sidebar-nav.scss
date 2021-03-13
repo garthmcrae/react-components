@@ -8,10 +8,10 @@
   box-sizing: border-box;
   flex: 0 0 $sidebar-width;
   height: 100vh;
+  left: 0;
   position: fixed;
   top: 0;
   transition: left $duration;
-  left: 0;
   width: $sidebar-width;
   z-index: 2;
 
